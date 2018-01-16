@@ -7,7 +7,8 @@
 
 [node name="Level" type="Node2D" parent="."]
 
-transform/pos = Vector2( 6, 6 )
+transform/pos = Vector2( 534.682, 331.098 )
+transform/scale = Vector2( 1, 1.5612 )
 
 [node name="Level" parent="Level" instance=ExtResource( 1 )]
 

@@ -17,6 +17,9 @@ var JumpAntiForce = 0
 
 func _ready():
 	set_fixed_process(true)
+	for i in get_tree().get_nodes_in_group("Pickup"):
+		connect("PickupWeapon", i, "Pick")
+
 	
 	
 func _fixed_process(delta):
@@ -58,11 +61,16 @@ func _fixed_process(delta):
 	#If colliding gravity is stopped
 	if is_colliding():
 		JumpAntiForce = 0
-		Gravity = 0
+		Gravity = -1
 		Jump = true
+		#get_node("Inventory/Blasters").set_hidden(false)
 	else:
+		#get_node("Inventory/Blasters").set_hidden(true)
 		Gravity = 0.2
 		
 	#Applying movement
 	Movement = Velocity * (delta + EndSpeed)
 	move(Movement)
+
+func _on_Area2D_area_enter(Area2D):
+	get_node("Inventory/Blasters").set_hidden(false)

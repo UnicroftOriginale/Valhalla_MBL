@@ -1,0 +1,321 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Levels/Arnabell/Image1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 202.874, 20.2578 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 29.8351 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 216.311, 10 )
+
+[node name="Arnabell" type="Node2D"]
+
+[node name="Backround" type="Sprite" parent="."]
+
+transform/pos = Vector2( 512.939, 300.956 )
+transform/scale = Vector2( 2.08203, 1.2415 )
+texture = ExtResource( 1 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="PlatformMid" type="Node2D" parent="Platforms"]
+
+editor/display_folded = true
+transform/pos = Vector2( 507.612, 420.783 )
+transform/scale = Vector2( 0.98341, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Floor" type="StaticBody2D" parent="Platforms/PlatformMid" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformMid/Floor"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Walls" type="StaticBody2D" parent="Platforms/PlatformMid" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -206.978, 9.57773 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 206.57, 9.57773 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Left" type="CollisionShape2D" parent="Platforms/PlatformMid/Walls"]
+
+transform/pos = Vector2( -206.978, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Right" type="CollisionShape2D" parent="Platforms/PlatformMid/Walls"]
+
+transform/pos = Vector2( 206.57, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
+
+[node name="Bottom" type="StaticBody2D" parent="Platforms/PlatformMid" groups=[
+"NonWalkable",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -7.33057, 65.1605 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 7.22211, -33.4294 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformMid/Bottom"]
+
+transform/pos = Vector2( 7.22211, -33.4294 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="PlatformRight" type="Node2D" parent="Platforms"]
+
+editor/display_folded = true
+transform/pos = Vector2( 851.664, 361.354 )
+transform/scale = Vector2( 0.531942, 0.421601 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Floor" type="StaticBody2D" parent="Platforms/PlatformRight" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformRight/Floor"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Walls" type="StaticBody2D" parent="Platforms/PlatformRight" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -206.978, 9.57773 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 206.57, 9.57773 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Left" type="CollisionShape2D" parent="Platforms/PlatformRight/Walls"]
+
+transform/pos = Vector2( -206.978, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Right" type="CollisionShape2D" parent="Platforms/PlatformRight/Walls"]
+
+transform/pos = Vector2( 206.57, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
+
+[node name="Bottom" type="StaticBody2D" parent="Platforms/PlatformRight" groups=[
+"NonWalkable",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -7.33057, 65.1605 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 7.22211, -33.4294 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformRight/Bottom"]
+
+transform/pos = Vector2( 7.22211, -33.4294 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="PlatformLeft" type="Node2D" parent="Platforms"]
+
+editor/display_folded = true
+transform/pos = Vector2( 154.187, 417.374 )
+transform/scale = Vector2( 0.506418, 0.456451 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Floor" type="StaticBody2D" parent="Platforms/PlatformLeft" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformLeft/Floor"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Walls" type="StaticBody2D" parent="Platforms/PlatformLeft" groups=[
+"Walkable",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -206.978, 9.57773 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 206.57, 9.57773 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Left" type="CollisionShape2D" parent="Platforms/PlatformLeft/Walls"]
+
+transform/pos = Vector2( -206.978, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Right" type="CollisionShape2D" parent="Platforms/PlatformLeft/Walls"]
+
+transform/pos = Vector2( 206.57, 9.57773 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 1
+
+[node name="Bottom" type="StaticBody2D" parent="Platforms/PlatformLeft" groups=[
+"NonWalkable",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -7.33057, 65.1605 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 7.22211, -33.4294 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformLeft/Bottom"]
+
+transform/pos = Vector2( 7.22211, -33.4294 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+

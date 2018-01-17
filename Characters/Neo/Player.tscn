@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Characters/Neo/Neo.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Neo/D_U.png" type="Texture" id=2]
 [ext_resource path="res://Characters/Neo/NeoWeaponA.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Characters/Neo/NeoWeaponB.tscn" type="PackedScene" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://Miscs/WeaponPickup/WeaponPickup.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -13,12 +11,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 176.616, 10 )
-
-[node name="Player" type="Node"]
+[node name="Player" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
@@ -37,14 +30,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Player"]
 
 texture = ExtResource( 2 )
-
-[node name="Area2D" type="Area2D" parent="Player"]
-
-input/pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 
@@ -71,17 +56,9 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Inventory" type="Control" parent="Player"]
+[node name="Inventory" type="Node2D" parent="Player"]
 
 editor/display_folded = true
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
 
 [node name="Blasters" parent="Player/Inventory" instance=ExtResource( 3 )]
 
@@ -90,38 +67,5 @@ visibility/visible = false
 [node name="CursedBlade" parent="Player/Inventory" instance=ExtResource( 4 )]
 
 visibility/visible = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-transform/pos = Vector2( 6.13914, -2.87503 )
-input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8.98108, 48.4978 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-
-transform/pos = Vector2( 8.98108, 48.4978 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-
-transform/pos = Vector2( 8.39134, 49.9182 )
-transform/scale = Vector2( 5.53409, 0.327435 )
-texture = ExtResource( 5 )
-
-[node name="WeaponPickup" parent="." instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 61.5683, 15.4914 )
-
-[connection signal="area_enter" from="Player/Area2D" to="Player" method="_on_Area2D_area_enter"]
 
 

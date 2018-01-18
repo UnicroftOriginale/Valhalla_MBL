@@ -25,33 +25,6 @@ func _ready():
 	
 	
 func _fixed_process(delta):
-	##Weapon Mechanics
-	if WeaponACanEquip && Input.is_action_pressed("Equip"): ##Equip = "E"
-		if WeaponBEquipped: #Checking if another weapon is already equipped and making it invincible
-			get_node("Inventory/CursedBlade").set_hidden(true)
-			get_node("Inventory/Blasters").set_hidden(false)
-			WeaponBEquipped = false
-			WeaponAEquipped = true
-		else:
-			get_node("Inventory/Blasters").set_hidden(false)
-			WeaponAEquipped = true
-		
-	if WeaponBCanEquip && Input.is_action_pressed("Equip"):
-		if WeaponAEquipped:
-			get_node("Inventory/Blasters").set_hidden(true)
-			get_node("Inventory/CursedBlade").set_hidden(false)
-			WeaponAEquipped = false
-			WeaponBEquipped = true
-		else:
-			get_node("Inventory/CursedBlade").set_hidden(false)
-			WeaponBEquipped = true
-			
-	if (WeaponAEquipped or WeaponBEquipped) && Input.is_action_pressed("UnEquip"):##UnEquip = "Q"
-		get_node("Inventory/Blasters").set_hidden(true)
-		get_node("Inventory/CursedBlade").set_hidden(true)
-			
-
-
 	#If no other force applied gravity pushes
 	if JumpAntiForce < Speed * 3:
 		JumpAntiForce += Gravity
@@ -80,18 +53,6 @@ func _fixed_process(delta):
 		if get_collider().is_in_group("Destroyer"):
 			get_node("/root/Main/UI/PopupPanel").popup()
 			queue_free()
-		if get_collider().is_in_group("WeaponCrateA"):
-			WeaponACanEquip = true
-			JumpAntiForce = 0 ##TEMPORARY
-			Gravity = 0 ##TEMPORARY
-		else:
-			WeaponACanEquip = false
-		if get_collider().is_in_group("WeaponCrateB"):###fwew
-			WeaponBCanEquip = true
-			JumpAntiForce = 0 ##TEMPORARY
-			Gravity = 0 ##TEMPORARY
-		else:
-			WeaponBCanEquip = false
 	else:
 		Gravity = 0.2  ##Doing the same thing as in the NonWalkable group but ehh
 		

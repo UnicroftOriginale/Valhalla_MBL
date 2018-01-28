@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="Character" type="Node2D" index="0"]
+[node name="Character" type="Node2D"]
 
 [node name="Neo" type="KinematicBody2D" parent="." index="0"]
 

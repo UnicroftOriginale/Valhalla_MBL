@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="Brawl O' Champions"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -18,6 +19,10 @@ config/icon="res://icon.png"
 Movement="*res://Autoloads/Movement.gd"
 Combat="*res://Autoloads/Combat.gd"
 NetCode="*res://Autoloads/NetCode.gd"
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [rendering]
 

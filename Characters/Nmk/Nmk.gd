@@ -3,11 +3,11 @@ extends KinematicBody2D
 const MOTION_SPEED = 3
 const MAX_SPEED = MOTION_SPEED * 5
 
-var Speed = 5
+var Speed = 2
 #slave var slave_pos = Vector2()
 #slave var slave_motion = Vector2()
 
-var JumpSpeed = 2.5
+var JumpSpeed = 2
 var AntiForce = 0
 var Gravity = 0.2
 var Jump = 0
@@ -26,9 +26,11 @@ func _physics_process(delta):
 	var motion = Vector2()
 #	if (is_network_master()):
 	if (Input.is_action_pressed("ui_left")):
+		#set_scale(Vector2(1, 1))
 		motion.x -= 1
 	if (Input.is_action_pressed("ui_right")):
 		motion.x += 1
+		#set_scale(Vector2(-1, 1))
 		
 	motion.y = AntiForce
 	if motion.length() > 0:

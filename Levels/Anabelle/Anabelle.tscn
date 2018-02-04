@@ -7,36 +7,46 @@
 custom_solver_bias = 0.0
 extents = Vector2( 31.8965, 32.3895 )
 
-[node name="Anabelle" type="Node2D" index="0"]
+[node name="Anabelle" type="Node2D"]
 
-[node name="PlatformerA" type="StaticBody2D" parent="." index="0"]
+position = Vector2( 491.651, 237.814 )
+scale = Vector2( 0.576019, 1.08705 )
 
-position = Vector2( -4.93658, 82.9037 )
+[node name="Platformer A" type="StaticBody2D" parent="." index="0" groups=[
+"Platform",
+]]
+
+editor/display_folded = true
+position = Vector2( -64.9208, 31.9683 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platformer A" index="0"]
+
 scale = Vector2( 8.24112, 1 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerA" index="0"]
-
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="PlatformerA" index="1"]
+[node name="Sprite" type="Sprite" parent="Platformer A" index="1"]
 
+scale = Vector2( 8.24112, 1 )
 texture = ExtResource( 1 )
 
-[node name="PlatformerB" type="StaticBody2D" parent="." index="1"]
+[node name="Platformer B" type="StaticBody2D" parent="." index="1" groups=[
+"Platform",
+]]
 
-position = Vector2( 468.948, 177.762 )
-scale = Vector2( 6.89864, 1 )
+editor/display_folded = true
+position = Vector2( 567.158, 39.4587 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -48,19 +58,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerB" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platformer B" index="0"]
 
+scale = Vector2( 8.24112, 1 )
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="PlatformerB" index="1"]
+[node name="Sprite" type="Sprite" parent="Platformer B" index="1"]
 
+position = Vector2( 0.787598, 1.68329 )
+scale = Vector2( 8.24112, 1 )
 texture = ExtResource( 1 )
 
-[node name="PlatformerC" type="StaticBody2D" parent="." index="2"]
+[node name="Platformer C" type="StaticBody2D" parent="." index="2" groups=[
+"Platform",
+]]
 
-position = Vector2( 523.874, -86.123 )
-scale = Vector2( 7.50534, 1 )
+editor/display_folded = true
+position = Vector2( -588.785, 152.529 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -72,19 +88,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerC" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platformer C" index="0"]
 
+scale = Vector2( 8.24112, 1 )
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="PlatformerC" index="1"]
+[node name="Sprite" type="Sprite" parent="Platformer C" index="1"]
 
+position = Vector2( -1.28015, 1.75562 )
+scale = Vector2( 8.24112, 1 )
 texture = ExtResource( 1 )
 
-[node name="PlatformerD" type="StaticBody2D" parent="." index="3"]
+[node name="Platformer D" type="StaticBody2D" parent="." index="3" groups=[
+"Platform",
+]]
 
-position = Vector2( -491.363, 184.549 )
-scale = Vector2( 7.30381, 1 )
+editor/display_folded = true
+position = Vector2( 429.663, 178.065 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -96,13 +118,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformerD" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platformer D" index="0"]
 
+scale = Vector2( 8.24112, 1 )
 shape = SubResource( 1 )
 one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="PlatformerD" index="1"]
+[node name="Sprite" type="Sprite" parent="Platformer D" index="1"]
 
+position = Vector2( 5.55359, 1.70221 )
+scale = Vector2( 8.24112, 1 )
 texture = ExtResource( 1 )
 
 

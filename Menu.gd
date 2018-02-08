@@ -33,14 +33,14 @@ func _on_neoA_pressed():
 
 
 func _on_neoB_pressed():
-	PlayerNum = $Main/PlayerCount.text
+	PlayerNum = $Main/PlayerCount.text.to_int()
 	Movement.LegendChosen = "Neo"
 	Movement.PlayerNum = PlayerNum
 	Movement.ConfigureGame()
 
 
 func _on_neoC_pressed():
-	PlayerNum = $Main/PlayerCount.text
+	PlayerNum = $Main/PlayerCount.text.to_int()
 	Movement.LegendChosen = "Neo"
 	Movement.PlayerNum = PlayerNum
 	Movement.EA = true

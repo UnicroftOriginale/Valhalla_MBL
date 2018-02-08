@@ -1,5 +1,7 @@
 extends Node
 	
+#### AFPRIS 0.1 ###################(A FutureProof Request Input System)###########
+	
 var Legend
 var LegendChosen
 var PlayerNum
@@ -7,9 +9,9 @@ var EA = false
 var NMK = false
 var GameStarted = false
 
-var MotionSpeed = 90
+var MotionSpeed = 60
 
-var JumpSpeed = 2
+var JumpSpeed = 5
 var Gravity = 0.2
 var InitGravity = Gravity
 

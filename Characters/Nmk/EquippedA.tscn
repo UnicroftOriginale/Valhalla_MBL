@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Characters/Nmk/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Nmk/gnkCapped.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.55673, 10 )
+
+[node name="Nmk" instance=ExtResource( 1 )]
+
+[node name="Area2D" type="Area2D" parent="KinematicNmk" index="3"]
+
+position = Vector2( 15.6202, -1.57779 )
+rotation = 0.952264
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicNmk/Area2D" index="0"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="KinematicNmk/Area2D" index="1"]
+
+scale = Vector2( 0.0252145, 0.0263122 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

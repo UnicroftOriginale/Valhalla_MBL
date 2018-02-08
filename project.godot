@@ -20,6 +20,15 @@ Movement="*res://Autoloads/Movement.gd"
 Combat="*res://Autoloads/Combat.gd"
 NetCode="*res://Autoloads/NetCode.gd"
 
+[input]
+
+UnEquip=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+move_right=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+move_left=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+
 [logging]
 
 file_logging/enable_file_logging=true

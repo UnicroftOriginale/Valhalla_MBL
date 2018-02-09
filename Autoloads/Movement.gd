@@ -5,11 +5,10 @@ extends Node
 var Legend
 var LegendChosen
 var PlayerNum
-var EA = false
-var NMK = false
 var GameStarted = false
 
 var MotionSpeed = 60
+var InitMotionSpeed = MotionSpeed
 
 var JumpSpeed = 5
 var Gravity = 0.2
@@ -37,7 +36,7 @@ func _ready():
 func _process(delta):
 			
 	if PlayerNum == 1:
-		if AntiForceA < 1:
+		if AntiForceA < JumpSpeed * 3:
 			AntiForceA += Gravity
 		if GameStarted:
 			if Input.is_action_pressed("ui_right"):
@@ -68,16 +67,14 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_up"):
 		if PlayerNum == 1 && JumpA < 3:
-			AntiForceA += -JumpSpeed
+			AntiForceA -= JumpSpeed * 3
 			JumpA += 1
 		elif PlayerNum == 2 && JumpB < 3:
-			AntiForceB += -JumpSpeed
+			AntiForceB -= JumpSpeed * 3
 			JumpB += 1
 
 
 func ConfigureGame():
-	if EA && NMK:
-		LegendChosen = "Nmk"
 	Legend = load("res://Characters/" + LegendChosen + "/Character.tscn")
 	get_tree().change_scene("res://Main.tscn")
 
@@ -86,10 +83,16 @@ func OnCollision():
 	Gravity = 0
 	if PlayerNum == 1:
 		JumpA = 0
+		MotionSpeed = InitMotionSpeed
 	elif PlayerNum == 2:
 		JumpB = 0
+		MotionSpeed = InitMotionSpeed
 
 
 func OnCollisionExit():
 	Gravity = InitGravity
+	if PlayerNum == 1:
+		MotionSpeed = InitMotionSpeed / 2 
+	elif PlayerNum == 2:
+		MotionSpeed = InitMotionSpeed / 2 
 

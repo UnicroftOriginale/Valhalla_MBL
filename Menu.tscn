@@ -81,31 +81,7 @@ text = "Offline"
 flat = false
 align = 1
 
-[node name="EasterBunny" type="Button" parent="Main" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 379.0
-margin_right = 156.0
-margin_bottom = 417.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Click me NOT!!"
-flat = false
-align = 1
-
-[node name="Options" type="Button" parent="Main" index="3"]
+[node name="Options" type="Button" parent="Main" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -129,7 +105,7 @@ text = "Options"
 flat = false
 align = 1
 
-[node name="PlayerCount" type="TextEdit" parent="Main" index="4"]
+[node name="PlayerCount" type="TextEdit" parent="Main" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -162,7 +138,7 @@ caret_blink = false
 caret_blink_speed = 0.65
 caret_moving_by_right_click = true
 
-[node name="PlayersCountLabel" type="Label" parent="Main" index="5"]
+[node name="PlayersCountLabel" type="Label" parent="Main" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -184,7 +160,6 @@ max_lines_visible = -1
 
 [node name="CharacterSelect" type="Panel" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -223,7 +198,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="neoA" type="Button" parent="CharacterSelect" index="1"]
+[node name="Neo" type="Button" parent="CharacterSelect" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -271,7 +246,7 @@ text = "Neo"
 flat = false
 align = 1
 
-[node name="neoC" type="Button" parent="CharacterSelect" index="3"]
+[node name="Gi'Mon" type="Button" parent="CharacterSelect" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -291,7 +266,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Neo"
+text = "Gi'Mon"
 flat = false
 align = 1
 
@@ -319,48 +294,7 @@ text = "Back"
 flat = false
 align = 1
 
-[node name="EasturIg" type="Panel" parent="." index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 247.0
-margin_top = 104.0
-margin_right = 781.0
-margin_bottom = 320.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Select" type="Button" parent="EasturIg" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 183.0
-margin_top = 79.0
-margin_right = 327.0
-margin_bottom = 138.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "Select secret character"
-flat = false
-align = 1
-
-[node name="Error" type="AcceptDialog" parent="." index="3"]
+[node name="Error" type="AcceptDialog" parent="." index="2"]
 
 visible = false
 anchor_left = 0.0
@@ -387,18 +321,14 @@ _sections_unfolded = [ "Dialog" ]
 
 [connection signal="pressed" from="Main/OfflineGame" to="." method="_on_OfflineGame_pressed"]
 
-[connection signal="pressed" from="Main/EasterBunny" to="." method="_on_EasterBunny_pressed"]
-
 [connection signal="pressed" from="Main/Options" to="." method="_on_Options_pressed"]
 
-[connection signal="pressed" from="CharacterSelect/neoA" to="." method="_on_neoA_pressed"]
+[connection signal="pressed" from="CharacterSelect/Neo" to="." method="_on_neoA_pressed"]
 
 [connection signal="pressed" from="CharacterSelect/neoB" to="." method="_on_neoB_pressed"]
 
-[connection signal="pressed" from="CharacterSelect/neoC" to="." method="_on_neoC_pressed"]
+[connection signal="pressed" from="CharacterSelect/Gi'Mon" to="." method="_on_neoC_pressed"]
 
 [connection signal="pressed" from="CharacterSelect/Back" to="." method="_on_Back_pressed"]
-
-[connection signal="pressed" from="EasturIg/Select" to="." method="_on_Select_pressed"]
 
 
